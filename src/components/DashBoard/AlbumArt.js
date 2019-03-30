@@ -34,9 +34,18 @@ export default class AlbumArt extends Component {
         }}
       >
         <Animated.Image
-          source={require("../../assets/musicplayer.png")}
+          source={require("../../assets/musicDisc.png")}
           style={{ height: 250, width: 250, transform: [{ rotate: spin }] }}
         />
+        <View style={{ position: "absolute", paddingLeft: "40%", top: -15 }}>
+          <Image
+            source={require("../../assets/musicStick.png")}
+            style={{
+              height: 100,
+              width: 300
+            }}
+          />
+        </View>
       </View>
     );
   }

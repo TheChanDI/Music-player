@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const Header = props => {
   return (
@@ -13,6 +14,17 @@ const Header = props => {
       >
         Music Player
       </Text>
+      <TouchableOpacity
+        style={{
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          marginRight: "2%",
+          marginBottom: "1%"
+        }}
+      >
+        <Icon name="library-music" size={27} color="#333645" />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -22,7 +34,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 70,
-    backgroundColor: "#C75E65"
+    backgroundColor: "#C75E65",
+    flexDirection: "row"
   }
 });
 

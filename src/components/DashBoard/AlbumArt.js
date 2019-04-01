@@ -1,23 +1,44 @@
 import React, { Component } from "react";
 import { Text, View, Image, Animated, Easing } from "react-native";
 
+let val = 1;
 export default class AlbumArt extends Component {
   state = {
     spinDisc: new Animated.Value(0)
   };
 
-  componentDidMount = () => {
-    this.spin();
-  };
+  spin = () => {
+    alert("ran!");
+    let that = this.state;
+    that.spinDisc.setValue(0);
 
-  spin() {
-    this.state.spinDisc.setValue(0);
-    Animated.timing(this.state.spinDisc, {
-      toValue: 1,
-      duration: 4000,
-      easing: Easing.linear
-    }).start(() => this.spin());
-  }
+    if (val == 1) {
+      reSpinDisc();
+
+      function reSpinDisc() {
+        val = 2;
+        Animated.timing(that.spinDisc, {
+          toValue: 1,
+          duration: 4000,
+          easing: Easing.linear
+        }).start(() => reSpinDisc());
+      }
+    } else {
+      this.state.spinDisc.stopAnimation();
+      val = 1;
+    }
+
+    // if (val == 2) {
+    //   Animated.timing(this.state.spinDisc, {
+    //     toValue: 1,
+    //     duration: 4000,
+    //     easing: Easing.linear
+    //   }).start(() => {
+    //     reSpinDisc();
+    //   });
+    // } else {
+    //   this.state.spinDisc.stopAnimation();
+  };
 
   render() {
     const spin = this.state.spinDisc.interpolate({
@@ -46,6 +67,13 @@ export default class AlbumArt extends Component {
             }}
           />
         </View>
+        <Text
+          onPress={() => {
+            this.spin();
+          }}
+        >
+          press for spin
+        </Text>
       </View>
     );
   }

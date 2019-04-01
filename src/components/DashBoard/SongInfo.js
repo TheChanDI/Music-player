@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
+import EIcon from "react-native-vector-icons/Entypo";
 
 export default class SongInfo extends Component {
   render() {
@@ -7,13 +8,22 @@ export default class SongInfo extends Component {
       <View
         style={{
           marginTop: 30,
-          borderTopColor: "white",
+          borderTopColor: "#666666",
           borderTopWidth: 1,
-          borderBottomWidth: 1,
-          borderBottomColor: "white",
-          paddingVertical: 10
+          paddingVertical: 15,
+          flexDirection: "row",
+          justifyContent: "space-around"
         }}
       >
+        <TouchableOpacity>
+          <EIcon
+            name="plus"
+            color="white"
+            size={20}
+            style={{ marginTop: "2%" }}
+          />
+        </TouchableOpacity>
+
         <View
           style={{
             flexDirection: "column",
@@ -40,6 +50,15 @@ export default class SongInfo extends Component {
             Fear of the dark
           </Text>
         </View>
+
+        <TouchableOpacity>
+          <EIcon
+            name="dots-three-horizontal"
+            color="white"
+            size={20}
+            style={{ marginTop: "2%" }}
+          />
+        </TouchableOpacity>
       </View>
     );
   }

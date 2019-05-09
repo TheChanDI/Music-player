@@ -8,14 +8,14 @@ export default class AlbumArt extends Component {
   };
 
   spin = () => {
-    alert("ran!");
     let that = this.state;
-    that.spinDisc.setValue(0);
+    this.state.spinDisc.setValue(0);
 
     if (val == 1) {
       reSpinDisc();
 
       function reSpinDisc() {
+        // alert("enter");
         val = 2;
         Animated.timing(that.spinDisc, {
           toValue: 1,
@@ -24,7 +24,7 @@ export default class AlbumArt extends Component {
         }).start(() => reSpinDisc());
       }
     } else {
-      this.state.spinDisc.stopAnimation();
+      that.spinDisc.stopAnimation();
       val = 1;
     }
 
@@ -67,13 +67,6 @@ export default class AlbumArt extends Component {
             }}
           />
         </View>
-        <Text
-          onPress={() => {
-            this.spin();
-          }}
-        >
-          press for spin
-        </Text>
       </View>
     );
   }

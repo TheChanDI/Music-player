@@ -3,6 +3,14 @@ import { Text, View, TouchableOpacity } from "react-native";
 import EIcon from "react-native-vector-icons/Entypo";
 
 export default class SongInfo extends Component {
+  componentDidMount() {
+    console.log("songInfo mounted!");
+  }
+
+  componentWillUnmount() {
+    console.log("songInfo unmounted!");
+  }
+
   render() {
     return (
       <View

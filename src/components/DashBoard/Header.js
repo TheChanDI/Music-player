@@ -23,7 +23,12 @@ const Header = props => {
           marginBottom: "1%"
         }}
       >
-        <Icon name="library-music" size={27} color="#333645" />
+        <Icon
+          name="library-music"
+          size={27}
+          color="#333645"
+          onPress={() => props.navigation.navigate("Music")}
+        />
       </TouchableOpacity>
     </View>
   );

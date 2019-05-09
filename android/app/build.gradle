@@ -139,8 +139,10 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-get-music-files')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
+     compile project(':react-native-get-music-files')
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
 }

@@ -11,7 +11,7 @@ export default class DashboardScreen extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: "#333645" }}>
         <StatusBar backgroundColor="#C75E65" />
-        <Header />
+        <Header navigation={this.props.navigation} />
         <AlbumArt />
         <SongInfo />
         <Controls />

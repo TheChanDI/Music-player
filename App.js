@@ -8,6 +8,38 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import DashboardScreen from "./src/components/screens/DashboardScreen";
 import LyricScreen from "./src/components/screens/LyricScreen";
 import MusicScreen from "./src/components/screens/MusicScreen";
+import ArtistScreen from "./src/components/screens/ArtistScreen";
+import AlbumScreen from "./src/components/screens/AlbumScreen";
+
+const MusicTabScreen = createMaterialTopTabNavigator(
+  {
+    localMusic: {
+      screen: MusicScreen,
+      title: "Local songs"
+    },
+    Artist: {
+      screen: ArtistScreen,
+      title: "Artist"
+    },
+    Albums: {
+      screen: AlbumScreen,
+      title: "Albums"
+    }
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: "black",
+      inactiveTintColor: "white",
+      indicatorStyle: {
+        backgroundColor: "#F7E1B8"
+      },
+      style: {
+        backgroundColor: "#C75E65",
+        height: 50
+      }
+    }
+  }
+);
 
 const DashboardStack = createStackNavigator({
   Dashboard: {
@@ -17,7 +49,7 @@ const DashboardStack = createStackNavigator({
     }
   },
   Music: {
-    screen: MusicScreen,
+    screen: MusicTabScreen,
     navigationOptions: {
       header: null
     }
@@ -45,7 +77,7 @@ const botTabNav = createMaterialTopTabNavigator(
   },
   {
     tabBarPosition: "bottom",
-
+    swipeEnabled: false,
     tabBarOptions: {
       showIcon: true,
       showLabel: false,

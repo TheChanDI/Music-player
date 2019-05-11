@@ -49,7 +49,7 @@ export default class MusicScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: "#333645" }}>
-        <View style={{ height: 50, backgroundColor: "#C75E65" }}>
+        {/* <View style={{ height: 50, backgroundColor: "#C75E65" }}>
           <Text
             style={{
               textAlign: "center",
@@ -60,7 +60,7 @@ export default class MusicScreen extends Component {
           >
             Songs
           </Text>
-        </View>
+        </View> */}
         <FlatList
           data={this.state.musicData}
           renderItem={({ item }) => this.showSongs(item)}
